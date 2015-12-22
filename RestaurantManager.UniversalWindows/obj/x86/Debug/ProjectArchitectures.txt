@@ -1,3 +1,0 @@
-C:\Users\ericl_000\Documents\Visual Studio 2015\Projects\hwstart\RestaurantManager.Extensions\RestaurantManager.Extensions.csproj;x86
-C:\Users\ericl_000\Documents\Visual Studio 2015\Projects\hwstart\RestaurantManager.Models\RestaurantManager.Models.csproj;x86
-C:\Users\ericl_000\Documents\Visual Studio 2015\Projects\hwstart\RestaurantManager.UniversalWindows\RestaurantManager.UniversalWindows.csproj;x86
