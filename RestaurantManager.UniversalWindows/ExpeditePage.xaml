@@ -4,12 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:RestaurantManager.UniversalWindows"
     xmlns:models="using:RestaurantManager.Models"
+    xmlns:extensions="using:RestaurantManager.Extensions"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.DataContext>
         <models:ExpediteDataManager />
     </Page.DataContext>
+    <Page.Resources>
+        <extensions:BoolToColorConverter x:Key="BoolToColorConverter" />
+    </Page.Resources>
     <Page.TopAppBar>
         <AppBar>
             <AppBarButton Label="Home" Click="MainPage_Click">
@@ -30,18 +34,38 @@
                 <DataTemplate>
                     <Grid Background="DarkGray">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="120" />
-                            <RowDefinition Height="120" />
+                            <RowDefinition Height="140" />
+                            <RowDefinition Height="80" />
+                            <RowDefinition Height="auto" />
                         </Grid.RowDefinitions>
-                        <Border Background="#555555" Grid.Row="0" Width="220">
+                        <Border Background="#333333" Grid.Row="0" Width="220">
                             <ListView ItemsSource="{Binding Items}" />
                         </Border>
                         <StackPanel  Grid.Row="1" Width="220" Orientation="Vertical">
-                            <TextBlock Text="{Binding Table}" FontSize="24"/>
-                            <TextBlock Text="Special Request:" Margin="10,0" FontSize="12"/>
+                            <TextBlock Text="{Binding Table}" FontSize="20"/>
+                            <TextBlock Text="Special Notes:" Margin="10,10,0,0" FontSize="12"/>
                             <TextBlock Text="{Binding SpecialRequests}" Margin="10,0" FontSize="12"/>
                         </StackPanel>
-                        <Button Content="Delete" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" FontSize="18"/>
+                        <Grid Grid.Row="2" >
+                            <Grid.Background>
+                                <SolidColorBrush x:Name="StatusColor">
+                                    <SolidColorBrush.Color>
+                                        <Binding Path="Expedite">
+                                            <Binding.Converter>
+                                                <extensions:BoolToColorConverter TrueColor="Red" FalseColor="Transparent" />
+                                            </Binding.Converter>
+                                        </Binding>
+                                    </SolidColorBrush.Color>
+                                </SolidColorBrush>
+                            </Grid.Background>
+                            <Border VerticalAlignment="Bottom" HorizontalAlignment="Center" >
+                                <Border.Background>
+                                    <SolidColorBrush Color="Gray" Opacity="0.2" />
+                                </Border.Background>
+                                <Button Content="Delete" FontSize="18" />
+                            </Border>
+                        </Grid>
+
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>

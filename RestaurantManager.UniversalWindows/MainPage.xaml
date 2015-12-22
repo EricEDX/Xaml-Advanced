@@ -4,6 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:RestaurantManager.UniversalWindows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:extensions="using:RestaurantManager.Extensions"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
@@ -72,6 +74,11 @@
             </Setter>
         </Style>
     </Page.Resources>
+
+    <i:Interaction.Behaviors>
+        <extensions:RightClickMessageDialogBehavior Title="Credits" Message="Thanks to the team who developed this" />
+    </i:Interaction.Behaviors>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.40*" />
