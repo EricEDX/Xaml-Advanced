@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantManager.UniversalWindows", "RestaurantManager.UniversalWindows\RestaurantManager.UniversalWindows.csproj", "{15039095-DCCC-4AED-8757-C2DB14B96088}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantManager.Models", "RestaurantManager.Models\RestaurantManager.Models.csproj", "{7EA2B405-E454-4F0C-A8C3-D6BF3F814F5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantManager.Extensions", "RestaurantManager.Extensions\RestaurantManager.Extensions.csproj", "{49DDBB65-3413-4474-857F-ACEB1BD41FCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantManager.ViewModels", "RestaurantManager.ViewModels\RestaurantManager.ViewModels.csproj", "{05BB349F-E74A-48D0-A809-1757B149AC17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,22 @@ Global
 		{49DDBB65-3413-4474-857F-ACEB1BD41FCC}.Release|x64.Build.0 = Release|x64
 		{49DDBB65-3413-4474-857F-ACEB1BD41FCC}.Release|x86.ActiveCfg = Release|x86
 		{49DDBB65-3413-4474-857F-ACEB1BD41FCC}.Release|x86.Build.0 = Release|x86
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Debug|ARM.ActiveCfg = Debug|ARM
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Debug|ARM.Build.0 = Debug|ARM
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Debug|x64.ActiveCfg = Debug|x64
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Debug|x64.Build.0 = Debug|x64
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Debug|x86.ActiveCfg = Debug|x86
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Debug|x86.Build.0 = Debug|x86
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Release|ARM.ActiveCfg = Release|ARM
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Release|ARM.Build.0 = Release|ARM
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Release|x64.ActiveCfg = Release|x64
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Release|x64.Build.0 = Release|x64
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Release|x86.ActiveCfg = Release|x86
+		{05BB349F-E74A-48D0-A809-1757B149AC17}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
