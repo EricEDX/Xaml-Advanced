@@ -10,9 +10,9 @@ namespace RestaurantManager.UniversalWindows
     {
         public OrderPage()
         {
-            this.InitializeComponent();
             IMessageService messageService = new MessageDialogService();
-            this.DataContext = new OrderViewModel(messageService);
+            this.DataContext = new OrderViewModel(messageService, "Order has been Submitted");
+            this.InitializeComponent();     
         }
 
         private void MainPage_Click(object sender, RoutedEventArgs e)

@@ -5,6 +5,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using RestaurantManager.ViewModels;
 using System;
+using System.Linq;
 
 namespace RestaurantManager.ViewModels
 {
@@ -53,6 +54,16 @@ namespace RestaurantManager.ViewModels
             }
         }
 
+        private string specialRequests;
+
+        public string SpecialRequests
+        {
+            get { return specialRequests; }
+            set { specialRequests = value; base.OnPropertyChanged(); }
+        }
+
+        public string Message { get; set; }
+
         private readonly IMessageService _messageService;
 
         public DelegateCommand<int> AddToOrderCommand { get; private set; }
@@ -66,17 +77,13 @@ namespace RestaurantManager.ViewModels
         public DelegateCommand<string> SubmitOrderCommand { get; private set; }
 
         private void SubmitOrderExecute(string parameter)
-        {
-            List<MenuItem> orderMenuItems = new List<MenuItem>();
-            foreach(MenuItem item in CurrentlySelectedMenuItems)
-            {
-                orderMenuItems.Add(item);
-            }
-            Order orderToSubmit = new Order { Complete = false, Expedite = false, SpecialRequests = parameter, Table = Repository.Tables[0], Items = orderMenuItems};
+        {            
+            Order orderToSubmit = new Order { Complete = false, Expedite = false, SpecialRequests = parameter, Table = Repository.Tables[0], Items = CurrentlySelectedMenuItems.ToList() };
             base.Repository.Orders.Add(orderToSubmit);
             this.CurrentlySelectedMenuItems.Clear();
+            this.SpecialRequests = "";
             SubmitOrderCommand.RaiseCanExecuteChanged();
-            _messageService.ShowDialog("Order has been submitted");
+            _messageService.ShowDialog(this.Message);
         }
 
         public bool AddToOrderButtonIsEnabled;
@@ -95,9 +102,10 @@ namespace RestaurantManager.ViewModels
             else { SubmitButtonIsEnabled = false; return false; }
         }
 
-        public OrderViewModel(IMessageService messageService)
+        public OrderViewModel(IMessageService messageService, string message)
         {
             _messageService = messageService;
+            this.Message = message;
             AddToOrderCommand = new DelegateCommand<int>(AddToOrderExecute, AddToOrderCanExecute);
             SubmitOrderCommand = new DelegateCommand<string>(SubmitOrderExecute, SubmitOrderCanExecute);
         }
